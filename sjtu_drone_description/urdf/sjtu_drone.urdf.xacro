@@ -64,6 +64,24 @@
   </joint>
   <link name="bottom_cam_link"/>
 
+    <!-- OakD-Lite Camera Link -->
+  <link name="oakd_lite_link">
+    <visual>
+      <geometry>
+        <mesh filename="model://OakD-Lite/meshes/OAK-D_LITE_V1.dae" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </visual>
+  </link>
+
+  <!-- Fixed joint to attach OakD-Lite to the base of the drone -->
+  <joint name="oakd_lite_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="oakd_lite_link"/>
+    <origin xyz="0.05 0 0.03" rpy="0 0 0"/>
+  </joint>
+
+
 
   <gazebo>
     <plugin name='simple_drone' filename='libplugin_drone.so'>
@@ -257,6 +275,40 @@
       </plugin>
     </sensor>
   </gazebo>
+
+  <!--OakD-Lite stero depth sensing camera-->
+
+  <gazebo reference="oakd_lite_link">
+    <sensor name="oakd_camera" type="depth">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>30.0</update_rate>
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>10.0</far>
+        </clip>
+      </camera>
+      <plugin name="oakd_camera_plugin" filename="libgazebo_ros_depth_camera.so">
+        <camera_name>oakd_camera</camera_name>
+        <image_topic_name>image_raw</image_topic_name>
+        <depth_image_topic_name>depth/image_raw</depth_image_topic_name>
+        <camera_info_topic_name>camera_info</camera_info_topic_name>
+        <frame_name>oakd_lite_link</frame_name>
+        <ros>
+          <namespace>${mp['namespace']}</namespace>
+        </ros>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
 
 
   <gazebo reference="base_link">

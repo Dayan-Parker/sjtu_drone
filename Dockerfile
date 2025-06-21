@@ -30,6 +30,8 @@ RUN curl -L https://github.com/osrf/gazebo_models/archive/refs/heads/master.zip 
     && rm -r /tmp/gazebo_models.zip
 
 WORKDIR /ros2_ws
+COPY ./my_bashrc /home/user/.bashrc
+
 RUN apt-get update && \
     /bin/bash -c 'cd /ros2_ws/ \
     && source /opt/ros/${ROS_DISTRO}/setup.bash \
