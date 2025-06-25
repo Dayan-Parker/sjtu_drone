@@ -1,0 +1,1 @@
+prepend-non-duplicate;PYTHONPATH;/ros2_ws/src/sjtu_drone/build/sjtu_drone_bringup

@@ -1,0 +1,3 @@
+/ros2_ws/src/sjtu_drone/install/sjtu_drone_description/lib/libplugin_drone.so
+/ros2_ws/src/sjtu_drone/install/sjtu_drone_description/share/sjtu_drone_description/cmake/export_sjtu_drone_descriptionExport.cmake
+/ros2_ws/src/sjtu_drone/install/sjtu_drone_description/share/sjtu_drone_description/cmake/export_sjtu_drone_descriptionExport-noconfig.cmake

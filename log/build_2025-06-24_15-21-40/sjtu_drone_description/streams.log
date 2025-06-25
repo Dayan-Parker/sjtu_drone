@@ -1,0 +1,21 @@
+[0.042s] Invoking command in '/ros2_ws/src/sjtu_drone/build/sjtu_drone_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/ros2_ws/src/sjtu_drone/install/sjtu_drone_control:/ros2_ws/src/sjtu_drone/install/sjtu_drone_bringup:/ros2_ws/install/sjtu_drone_control:/ros2_ws/install/sjtu_drone_bringup:/opt/ros/humble /usr/bin/cmake /ros2_ws/src/sjtu_drone/sjtu_drone_description -DCMAKE_INSTALL_PREFIX=/ros2_ws/src/sjtu_drone/install/sjtu_drone_description
+[0.068s] [31mCMake Error at CMakeLists.txt:15 (find_package):
+[0.068s]   By not providing "Findsdformat14.cmake" in CMAKE_MODULE_PATH this project
+[0.068s]   has asked CMake to find a package configuration file provided by
+[0.069s]   "sdformat14", but CMake did not find one.
+[0.069s] 
+[0.069s]   Could not find a package configuration file provided by "sdformat14" with
+[0.069s]   any of the following names:
+[0.069s] 
+[0.069s]     sdformat14Config.cmake
+[0.069s]     sdformat14-config.cmake
+[0.069s] 
+[0.069s]   Add the installation prefix of "sdformat14" to CMAKE_PREFIX_PATH or set
+[0.069s]   "sdformat14_DIR" to a directory containing one of the above files.  If
+[0.069s]   "sdformat14" provides a separate development package or SDK, be sure it has
+[0.069s]   been installed.
+[0.069s] 
+[0.069s] [0m
+[0.069s] -- Configuring incomplete, errors occurred!
+[0.069s] See also "/ros2_ws/src/sjtu_drone/build/sjtu_drone_description/CMakeFiles/CMakeOutput.log".
+[0.072s] Invoked command in '/ros2_ws/src/sjtu_drone/build/sjtu_drone_description' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/ros2_ws/src/sjtu_drone/install/sjtu_drone_control:/ros2_ws/src/sjtu_drone/install/sjtu_drone_bringup:/ros2_ws/install/sjtu_drone_control:/ros2_ws/install/sjtu_drone_bringup:/opt/ros/humble /usr/bin/cmake /ros2_ws/src/sjtu_drone/sjtu_drone_description -DCMAKE_INSTALL_PREFIX=/ros2_ws/src/sjtu_drone/install/sjtu_drone_description

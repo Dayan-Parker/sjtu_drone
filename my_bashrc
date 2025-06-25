@@ -1,0 +1,29 @@
+#
+# ~/.bashrc
+#
+#
+. /opt/ros/humble/setup.bash
+export PATH="$PATH:/usr/local/MATLAB/R2024b/bin"
+
+eval "$(starship init bash)"
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+alias code="code --enable-features=WaylandWindowDecorations --ozone-platform=wayland"
+# Added during initial setup
+alias .r='. install/setup.bash'
+alias path_plan='ros2 run ft_path_planning ros'
+alias .w="source /opt/ros/${ROS_DISTRO}/setup.bash"
+alias run_drone="ros2 launch  sjtu_drone_bringup sjtu_drone_bringup.launch.py"
+alias take_off="ros2 topic pub /drone/takeoff std_msgs/msg/Empty {} --once"
+alias land="ros2 topic pub /drone/land std_msgs/msg/Empty {} --once"
+alias path_plan_build='colcon build --symlink-install --packages-up-to ft_path_planning'
+alias eufs='ros2 launch eufs_launcher eufs_launcher.launch.py'
+export EUFS_MASTER=/home/garry/ft
+export FT_CATKIN_HOME=/home/garry/catkin_ws
+export FT_COLCON_HOME=/home/garry/ft
+export ROSDISTRO=
